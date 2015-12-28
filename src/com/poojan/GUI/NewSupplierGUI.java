@@ -217,7 +217,7 @@ public class NewSupplierGUI extends javax.swing.JFrame {
         try {
             dmaBManager.save(supplier);
         } catch (HibernateException exc) {
-            JOptionPane.showMessageDialog(rootPane, exc.getCause());
+            JOptionPane.showMessageDialog(rootPane, exc.getCause().getMessage());
             System.out.println(exc);
             return;
         }
@@ -237,7 +237,7 @@ public class NewSupplierGUI extends javax.swing.JFrame {
         try {
             dmaBManager.update(supplier);
         } catch (HibernateException exc) {
-            JOptionPane.showMessageDialog(rootPane, exc.getCause());
+            JOptionPane.showMessageDialog(rootPane, exc.getCause().getMessage());
             System.out.println(exc);
             return;
         }

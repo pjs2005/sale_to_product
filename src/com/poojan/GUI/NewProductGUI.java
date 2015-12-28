@@ -205,7 +205,7 @@ public class NewProductGUI extends javax.swing.JFrame {
         try {
             dBManager.save(product);
         } catch (HibernateException exc) {
-            JOptionPane.showMessageDialog(rootPane, exc.getCause());
+            JOptionPane.showMessageDialog(rootPane, exc.getCause().getMessage());
             System.out.println(exc.getCause());
             return;
         }
@@ -226,7 +226,7 @@ public class NewProductGUI extends javax.swing.JFrame {
         try {
             dBManager.update(product);
         } catch (HibernateException exc) {
-            JOptionPane.showMessageDialog(rootPane, exc.getCause());
+            JOptionPane.showMessageDialog(rootPane, exc.getCause().getMessage());
             System.out.println(exc);
             return;
         }

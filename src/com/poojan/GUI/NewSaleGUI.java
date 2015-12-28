@@ -285,7 +285,7 @@ public class NewSaleGUI extends javax.swing.JFrame {
         try {
             salesdb.save(sale);
         } catch (HibernateException exc) {
-            JOptionPane.showMessageDialog(rootPane, exc.getCause());
+            JOptionPane.showMessageDialog(rootPane, exc.getCause().getMessage());
             System.out.println(exc);
             return;
         }
@@ -321,7 +321,7 @@ public class NewSaleGUI extends javax.swing.JFrame {
         try {
             salesdb.update(sale);
         } catch (HibernateException exc) {
-            JOptionPane.showMessageDialog(rootPane, exc.getCause());
+            JOptionPane.showMessageDialog(rootPane, exc.getCause().getMessage());
             System.out.println(exc);
             return;
         }

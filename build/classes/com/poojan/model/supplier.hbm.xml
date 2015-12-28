@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.poojan.model.Supplier" table="supplier">
+        <id name="id" type="integer">
+            <column name ="id"/>
+            <generator class="increment"/>
+        </id>
+        <property name="name" unique="true" not-null="true" unique-key="name" type="string" />
+        <property name="address" type="string" not-null="true" column="address"/>
+        <property name="email" type="string" not-null="true" column="email"/>
+        <property name="phone" type="string" not-null="true" column="phone"/>
+        <list name="items" cascade="save-update">
+            <key column="supplier"/>
+            <list-index column="listindex"/>
+            <many-to-many column="product" class="com.poojan.model.Product"/>
+        </list>
+    </class>
+    <query name="getAllSupplier">
+        <![CDATA[from Supplier]]>
+    </query>
+    <query name="getSupllierbyName">
+        <![CDATA[from Supplier s where s.name = :name]]>
+    </query>
+    <query name="getSupllier">
+        <![CDATA[from Supplier s where s.id = :id]]>
+    </query>
+</hibernate-mapping>

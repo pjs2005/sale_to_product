@@ -28,7 +28,7 @@ public class ViewSalesGUI extends javax.swing.JFrame {
     }
 
     private void setUpTable() {
-
+        dBManager = new DBManager();
         Vector<String> tableHeaders = new Vector<String>();
         Vector tableData = new Vector();
         tableHeaders.add("Sale ID");
@@ -41,12 +41,11 @@ public class ViewSalesGUI extends javax.swing.JFrame {
             oneRow.add(sale.getId());
             oneRow.add(sale.getSaleDate());
             oneRow.add(sale.getTotalAmount());
-           
 
             tableData.add(oneRow);
 
         }
-        
+
         salesTable.setModel(new DefaultTableModel(tableData, tableHeaders));
     }
 
@@ -76,6 +75,15 @@ public class ViewSalesGUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setLabelFor(salesTable);
         jLabel1.setText("Sales");
+
+        jScrollPane1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jScrollPane1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jScrollPane1FocusLost(evt);
+            }
+        });
 
         salesTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -108,9 +116,9 @@ public class ViewSalesGUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(165, 165, 165)
+                .addGap(158, 158, 158)
                 .addComponent(jLabel1)
-                .addContainerGap(187, Short.MAX_VALUE))
+                .addContainerGap(194, Short.MAX_VALUE))
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -126,7 +134,7 @@ public class ViewSalesGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void salesTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salesTableMouseClicked
-        
+
         Sale found = dBManager.getSaleBySale((int) salesTable.getValueAt(salesTable.getSelectedRow(), 0));
         new NewSaleGUI(found).setVisible(true);
         setUpTable();
@@ -141,16 +149,24 @@ public class ViewSalesGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_salesTableFocusGained
 
     private void salesTableFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_salesTableFocusLost
-        setUpTable();
+        
     }//GEN-LAST:event_salesTableFocusLost
 
     private void formFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusGained
-
+        
     }//GEN-LAST:event_formFocusGained
 
     private void formFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusLost
-
+        
     }//GEN-LAST:event_formFocusLost
+
+    private void jScrollPane1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jScrollPane1FocusGained
+        setUpTable();
+    }//GEN-LAST:event_jScrollPane1FocusGained
+
+    private void jScrollPane1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jScrollPane1FocusLost
+        setUpTable();
+    }//GEN-LAST:event_jScrollPane1FocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

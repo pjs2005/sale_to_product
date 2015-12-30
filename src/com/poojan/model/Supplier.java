@@ -79,6 +79,7 @@ public class Supplier {
 
     public void addProduct(Product product) {
         items.add(product);
+        product.setSupplier(this);
 
     }
 

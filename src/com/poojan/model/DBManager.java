@@ -34,7 +34,10 @@ public class DBManager {
     }
 
     public List<Sale> getAllSales() {
-        return session.getNamedQuery("getAllSales").list();
+        session.beginTransaction();
+        List<Sale>  out = session.getNamedQuery("getAllSales").list();
+        session.getTransaction().commit();
+        return out;
     }
 
     public List<Supplier> getAllSuppliers() {

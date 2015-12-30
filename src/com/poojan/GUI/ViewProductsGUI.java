@@ -37,7 +37,7 @@ public class ViewProductsGUI extends javax.swing.JFrame {
     }
 
     private void setUpTable() {
-        
+
         Vector<String> tableHeaders = new Vector<String>();
         Vector tableData = new Vector();
         tableHeaders.add("ID");
@@ -46,7 +46,7 @@ public class ViewProductsGUI extends javax.swing.JFrame {
         tableHeaders.add("Supplier");
 
         List<Product> list;
-
+        dBManager = new DBManager();
         if (supplier != null) {
             list = dBManager.getAllProducts(supplier);
         } else {

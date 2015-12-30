@@ -20,6 +20,7 @@ import org.hibernate.HibernateException;
 public class NewProductGUI extends javax.swing.JFrame {
 
     Product product;
+    Supplier supplier;
     DBManager dBManager = new DBManager();
 
     /**
@@ -66,14 +67,21 @@ public class NewProductGUI extends javax.swing.JFrame {
         Boolean out = false;
         product.setName(nameTextField.getText());
 
-
         String a = priceTextField.getText();
         Float f = Float.valueOf(a);
         product.setPrice(f);
 
+        if (supplierCombo.getSelectedItem().toString().equals("")) {
+            out = true;
+        } else {
+            supplier = dBManager.getSupllierbyName(supplierCombo.getSelectedItem().toString());
+//            product.setSupplier(found);
 
-        product.setSupplier(dBManager.getSupllierbyName(supplierCombo.getSelectedItem().toString()));
-
+            supplier = dBManager.getSupllier(supplier.getId());
+            supplier.addProduct(product);
+            dBManager.update(supplier);
+        }
+        //product.setSupplier(dBManager.getSupllierbyName(supplierCombo.getSelectedItem().toString()));
         return out;
     }
 
@@ -204,6 +212,7 @@ public class NewProductGUI extends javax.swing.JFrame {
         }
         try {
             dBManager.save(product);
+            dBManager.update(supplier);
         } catch (HibernateException exc) {
             JOptionPane.showMessageDialog(rootPane, exc.getCause().getMessage());
             System.out.println(exc.getCause());
@@ -225,13 +234,12 @@ public class NewProductGUI extends javax.swing.JFrame {
         }
         try {
             dBManager.update(product);
+            dBManager.update(supplier);
         } catch (HibernateException exc) {
             JOptionPane.showMessageDialog(rootPane, exc.getCause().getMessage());
             System.out.println(exc);
             return;
         }
-
-        System.out.println(product.getName());
         setVisible(false);
         dispose();
 

@@ -8,7 +8,7 @@
         </id>
         <property name="name" unique="true" unique-key="name" not-null="true" type="string" column="name"/>
         <property name="price" type="float" column="price"/>
-        <many-to-one name="supplier" not-null="true" column="supplier" class="com.poojan.model.Supplier" />
+        <many-to-one name="supplier" not-null="true" column="supplier" cascade="save-update" class="com.poojan.model.Supplier" />
         <list name="sales" cascade="save-update">
             <key column="sale_id"/>
             <list-index column="position"/>

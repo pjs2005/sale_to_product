@@ -38,7 +38,7 @@ public class Product {
     }
     
     public void addSupplier(Supplier supplier){
-        supplier.addProduct(this);
+        supplier.getItems().add(this);
         this.supplier = supplier;
         
     }

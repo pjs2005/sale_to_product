@@ -32,6 +32,7 @@ public class ViewSalesGUI extends javax.swing.JFrame {
         Vector<String> tableHeaders = new Vector<String>();
         Vector tableData = new Vector();
         tableHeaders.add("Sale ID");
+        tableHeaders.add("Name");
         tableHeaders.add("Sale Date");
         tableHeaders.add("Sale Amount");
 
@@ -39,6 +40,7 @@ public class ViewSalesGUI extends javax.swing.JFrame {
 
             Vector<Object> oneRow = new Vector<Object>();
             oneRow.add(sale.getId());
+            oneRow.add(sale.getName());
             oneRow.add(sale.getSaleDate());
             oneRow.add(sale.getTotalAmount());
 

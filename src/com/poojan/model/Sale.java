@@ -85,7 +85,7 @@ public class Sale {
     public void removeProduct(Product product) {
         if (mapProducts.containsKey(product)) {
             int intFound = mapProducts.get(product);
-            if (intFound > 0) {
+            if (intFound > 1) {
                 intFound--;
                 mapProducts.put(product, intFound);
             } else {

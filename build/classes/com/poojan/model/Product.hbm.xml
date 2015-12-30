@@ -13,7 +13,9 @@
             <key column="sale_id"/>
             <list-index column="position"/>
             <many-to-many class="com.poojan.model.Sale" />
+<!--            creates another table(no real value)-->
         </list>
+        
     </class>
     <query name="getAllProducts">
         <![CDATA[from Product]]>

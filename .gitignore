@@ -58,4 +58,10 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-nbproject/private/private.xml
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+.nb-gradle/

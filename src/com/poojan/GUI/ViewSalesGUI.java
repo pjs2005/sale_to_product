@@ -58,8 +58,8 @@ public class ViewSalesGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        titleLabel = new javax.swing.JLabel();
+        salesScrollPane = new javax.swing.JScrollPane();
         salesTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -72,16 +72,16 @@ public class ViewSalesGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel1.setLabelFor(salesTable);
-        jLabel1.setText("Sales");
+        titleLabel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        titleLabel.setLabelFor(salesTable);
+        titleLabel.setText("Sales");
 
-        jScrollPane1.addFocusListener(new java.awt.event.FocusAdapter() {
+        salesScrollPane.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jScrollPane1FocusGained(evt);
+                salesScrollPaneFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                jScrollPane1FocusLost(evt);
+                salesScrollPaneFocusLost(evt);
             }
         });
 
@@ -109,7 +109,7 @@ public class ViewSalesGUI extends javax.swing.JFrame {
                 salesTableMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(salesTable);
+        salesScrollPane.setViewportView(salesTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -117,17 +117,17 @@ public class ViewSalesGUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(158, 158, 158)
-                .addComponent(jLabel1)
+                .addComponent(titleLabel)
                 .addContainerGap(194, Short.MAX_VALUE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(salesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(titleLabel)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE))
+                .addComponent(salesScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE))
         );
 
         pack();
@@ -160,18 +160,18 @@ public class ViewSalesGUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_formFocusLost
 
-    private void jScrollPane1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jScrollPane1FocusGained
+    private void salesScrollPaneFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_salesScrollPaneFocusGained
         setUpTable();
-    }//GEN-LAST:event_jScrollPane1FocusGained
+    }//GEN-LAST:event_salesScrollPaneFocusGained
 
-    private void jScrollPane1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jScrollPane1FocusLost
+    private void salesScrollPaneFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_salesScrollPaneFocusLost
         setUpTable();
-    }//GEN-LAST:event_jScrollPane1FocusLost
+    }//GEN-LAST:event_salesScrollPaneFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane salesScrollPane;
     private javax.swing.JTable salesTable;
+    private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
 }

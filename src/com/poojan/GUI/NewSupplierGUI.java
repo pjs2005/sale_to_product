@@ -60,11 +60,11 @@ public class NewSupplierGUI extends javax.swing.JFrame {
         emailLabel = new javax.swing.JLabel();
         phoneTextField = new javax.swing.JTextField();
         emailTextField = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        closeButton = new javax.swing.JButton();
         saveButton = new javax.swing.JButton();
         adddressPane = new javax.swing.JScrollPane();
         addressBox = new javax.swing.JTextArea();
-        jLabel1 = new javax.swing.JLabel();
+        titleLabel = new javax.swing.JLabel();
         title = new javax.swing.JLabel();
         viewProductsButton = new javax.swing.JButton();
         updateButton = new javax.swing.JButton();
@@ -87,10 +87,10 @@ public class NewSupplierGUI extends javax.swing.JFrame {
         emailTextField.setText("         "); // NOI18N
         emailTextField.setMinimumSize(new java.awt.Dimension(0, 0));
 
-        jButton2.setText("Close");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        closeButton.setText("Close");
+        closeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                closeButtonActionPerformed(evt);
             }
         });
 
@@ -106,8 +106,8 @@ public class NewSupplierGUI extends javax.swing.JFrame {
         addressBox.setToolTipText("");
         adddressPane.setViewportView(addressBox);
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel1.setText("New Sale");
+        titleLabel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        titleLabel.setText("New Sale");
 
         title.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
 
@@ -145,9 +145,7 @@ public class NewSupplierGUI extends javax.swing.JFrame {
                             .addComponent(phoneTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(adddressPane)
                             .addComponent(emailTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(nameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(nameTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(updateButton)
@@ -156,7 +154,7 @@ public class NewSupplierGUI extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(saveButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(closeButton)
                         .addGap(12, 12, 12))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -165,7 +163,7 @@ public class NewSupplierGUI extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(159, 159, 159)
-                    .addComponent(jLabel1)
+                    .addComponent(titleLabel)
                     .addContainerGap(202, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
@@ -191,7 +189,7 @@ public class NewSupplierGUI extends javax.swing.JFrame {
                     .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
+                    .addComponent(closeButton)
                     .addComponent(saveButton)
                     .addComponent(viewProductsButton)
                     .addComponent(updateButton))
@@ -199,17 +197,17 @@ public class NewSupplierGUI extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(143, 143, 143)
-                    .addComponent(jLabel1)
+                    .addComponent(titleLabel)
                     .addContainerGap(144, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void closeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeButtonActionPerformed
         setVisible(false); //you can't see me!
         dispose(); //Destroy the JFrame object
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_closeButtonActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
 
@@ -254,16 +252,16 @@ public class NewSupplierGUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane adddressPane;
     private javax.swing.JTextArea addressBox;
     private javax.swing.JLabel addressLabel;
+    private javax.swing.JButton closeButton;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JTextField emailTextField;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JFormattedTextField nameTextField;
     private javax.swing.JLabel phoneLabel;
     private javax.swing.JTextField phoneTextField;
     private javax.swing.JButton saveButton;
     private javax.swing.JLabel title;
+    private javax.swing.JLabel titleLabel;
     private javax.swing.JButton updateButton;
     private javax.swing.JButton viewProductsButton;
     // End of variables declaration//GEN-END:variables

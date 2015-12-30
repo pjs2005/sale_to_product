@@ -18,23 +18,15 @@ public class Sale {
 
     private int id;
     private Map<Product, Integer> mapProducts = new HashMap<Product, Integer>();
-    private Date saleDate;
     private String name;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    private Date saleDate;
 
     public Sale() {
         saleDate = new java.util.Date();
     }
 
     public void addProduct(Product product) {
-        
+
         if (mapProducts.containsKey(product)) {
             int intFound = mapProducts.get(product);
             intFound++;
@@ -52,6 +44,9 @@ public class Sale {
 
     public Map<Product, Integer> getMapProducts() {
         return mapProducts;
+    }
+    public String getName() {
+        return name;
     }
 
     public float getProductSub(Product product) {
@@ -105,6 +100,9 @@ public class Sale {
 
     public void setMapProducts(Map<Product, Integer> mapProducts) {
         this.mapProducts = mapProducts;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setSaleDate(Date saleDate) {

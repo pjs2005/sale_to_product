@@ -34,7 +34,7 @@ public class NewSaleGUI extends javax.swing.JFrame {
         saveButton.setVisible(true);
         updateButton.setVisible(false);
         setUpTable();
-        title.setText("New Sale");
+        titleLabel.setText("New Sale");
         totalLabelIn.setVisible(false);
         totalLabel.setVisible(false);
 
@@ -48,7 +48,7 @@ public class NewSaleGUI extends javax.swing.JFrame {
         this.sale = salesdb.getSaleBySale(insale.getId());
         
         saveButton.setVisible(false);
-        title.setVisible(false);
+        titleLabel.setVisible(false);
         setUpTable();
         customerTextField.setText(sale.getName());
         
@@ -109,7 +109,7 @@ public class NewSaleGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        title = new javax.swing.JLabel();
+        titleLabel = new javax.swing.JLabel();
         productSelectionComboBox = new javax.swing.JComboBox<>();
         addProductButton = new javax.swing.JButton();
         saveButton = new javax.swing.JButton();
@@ -120,7 +120,7 @@ public class NewSaleGUI extends javax.swing.JFrame {
         closeButton = new javax.swing.JButton();
         updateButton = new javax.swing.JButton();
         removeProductButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        nameLabel = new javax.swing.JLabel();
         customerTextField = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -130,7 +130,7 @@ public class NewSaleGUI extends javax.swing.JFrame {
             }
         });
 
-        title.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        titleLabel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
 
         addProductButton.setText("Add");
         addProductButton.addActionListener(new java.awt.event.ActionListener() {
@@ -187,7 +187,7 @@ public class NewSaleGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Customer Name");
+        nameLabel.setText("Customer Name");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -217,13 +217,13 @@ public class NewSaleGUI extends javax.swing.JFrame {
                         .addGap(0, 294, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
+                                .addComponent(nameLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(customerTextField)
                                 .addContainerGap())
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(title)
+                                    .addComponent(titleLabel)
                                     .addGap(208, 208, 208))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                     .addComponent(totalLabelIn)
@@ -235,13 +235,13 @@ public class NewSaleGUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(title)
+                .addComponent(titleLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(productSelectionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addProductButton)
                     .addComponent(removeProductButton)
-                    .addComponent(jLabel1)
+                    .addComponent(nameLabel)
                     .addComponent(customerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(pruductSelectedScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -350,13 +350,13 @@ public class NewSaleGUI extends javax.swing.JFrame {
     private javax.swing.JButton addProductButton;
     private javax.swing.JButton closeButton;
     private javax.swing.JFormattedTextField customerTextField;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel nameLabel;
     private javax.swing.JComboBox<String> productSelectionComboBox;
     private javax.swing.JTable productsTable;
     private javax.swing.JScrollPane pruductSelectedScrollPane;
     private javax.swing.JButton removeProductButton;
     private javax.swing.JButton saveButton;
-    private javax.swing.JLabel title;
+    private javax.swing.JLabel titleLabel;
     private javax.swing.JLabel totalLabel;
     private javax.swing.JLabel totalLabelIn;
     private javax.swing.JButton updateButton;

@@ -60,8 +60,6 @@ public class ViewProductsGUI extends javax.swing.JFrame {
             oneRow.add(product.getName());
             oneRow.add(product.getPrice());
             oneRow.add(product.getSupplier().getName());
-//            Supplier found = dBManager.getSupllier(product.getSupplier().getId());
-//            oneRow.add(found.getName());
             tableData.add(oneRow);
 
         }
@@ -78,7 +76,7 @@ public class ViewProductsGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
+        productScrollPane = new javax.swing.JScrollPane();
         productsTable = new javax.swing.JTable();
         titleLabel = new javax.swing.JLabel();
 
@@ -109,7 +107,7 @@ public class ViewProductsGUI extends javax.swing.JFrame {
                 productsTableMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(productsTable);
+        productScrollPane.setViewportView(productsTable);
 
         titleLabel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         titleLabel.setText("Products");
@@ -118,7 +116,7 @@ public class ViewProductsGUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
+            .addComponent(productScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(344, 344, 344)
                 .addComponent(titleLabel)
@@ -130,7 +128,7 @@ public class ViewProductsGUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(titleLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(productScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -138,8 +136,8 @@ public class ViewProductsGUI extends javax.swing.JFrame {
 
     private void productsTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productsTableMouseClicked
         Product found = dBManager.getProduct((int) productsTable.getValueAt(productsTable.getSelectedRow(), 0));
-
         new NewProductGUI(found).setVisible(true);
+        setUpTable();
 
 
     }//GEN-LAST:event_productsTableMouseClicked
@@ -154,7 +152,7 @@ public class ViewProductsGUI extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane productScrollPane;
     private javax.swing.JTable productsTable;
     private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables

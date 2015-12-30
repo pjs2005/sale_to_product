@@ -13,74 +13,68 @@ import java.util.List;
  * @author Poojan
  */
 public class Supplier {
+    private String address;
+    private String email;
 
     private int id;
+    private List<Product> items = new ArrayList<Product>();
     private String name;
     private String phone;
-    private String email;
-    private String address;
-    private List<Product> items = new ArrayList<Product>();
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public Supplier(String name, String address) {
         this.address = address;
         this.name = name;
+    }
+    public Supplier() {
+    }
+    public void addProduct(Product product) {
+        items.add(product);
+        product.setSupplier(this);
+        
+    }
+    public String getAddress() {
+        return address;
+    }
+    public String getEmail() {
+        return email;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public List<Product> getItems() {
         return items;
     }
-
-    public void setItems(List<Product> items) {
-        this.items = items;
+    public String getName() {
+        return name;
     }
-
-    public String getAddress() {
-        return address;
+    public String getPhone() {
+        return phone;
     }
 
     public void setAddress(String address) {
         this.address = address;
     }
 
-    public String getEmail() {
-        return email;
-    }
 
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public String getPhone() {
-        return phone;
+    public void setId(int id) {
+        this.id = id;
+    }
+    public void setItems(List<Product> items) {
+        this.items = items;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public Supplier() {
-    }
-
-    public void addProduct(Product product) {
-        items.add(product);
-        product.setSupplier(this);
-
-    }
 
 }

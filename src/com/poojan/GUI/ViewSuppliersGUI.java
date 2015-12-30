@@ -143,11 +143,11 @@ public class ViewSuppliersGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_supplersTableFocusLost
 
     private void formFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusGained
-        setUpTable();
+        
     }//GEN-LAST:event_formFocusGained
 
     private void formFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusLost
-         setUpTable();
+        
     }//GEN-LAST:event_formFocusLost
 
 

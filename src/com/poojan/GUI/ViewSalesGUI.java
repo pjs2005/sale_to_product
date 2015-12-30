@@ -149,23 +149,23 @@ public class ViewSalesGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_salesTableFocusGained
 
     private void salesTableFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_salesTableFocusLost
-        
+        setUpTable();
     }//GEN-LAST:event_salesTableFocusLost
 
     private void formFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusGained
-        
+
     }//GEN-LAST:event_formFocusGained
 
     private void formFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusLost
-        
+
     }//GEN-LAST:event_formFocusLost
 
     private void salesScrollPaneFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_salesScrollPaneFocusGained
-        setUpTable();
+
     }//GEN-LAST:event_salesScrollPaneFocusGained
 
     private void salesScrollPaneFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_salesScrollPaneFocusLost
-        setUpTable();
+
     }//GEN-LAST:event_salesScrollPaneFocusLost
 
 

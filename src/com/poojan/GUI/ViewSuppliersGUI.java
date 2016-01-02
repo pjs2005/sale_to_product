@@ -1,13 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.poojan.GUI;
 
 import com.poojan.model.DBManager;
-import com.poojan.model.Product;
-import com.poojan.model.Sale;
 import com.poojan.model.Supplier;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;

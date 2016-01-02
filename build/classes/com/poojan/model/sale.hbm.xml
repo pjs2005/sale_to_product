@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.poojan.model.Sale" table="sale">
-        <id name="id" type="integer">
-            <column name="id"/>
-            <generator class="increment"/>
-        </id>
-        <property name="saleDate" type="date" column="sale_date"/>
-        <property name="name" type="string" not-null="true" column="name"/>
-        <map name="mapProducts"  table="saleItems" cascade="save-update">
-            <key column="id"/>
-            <map-key-many-to-many class="com.poojan.model.Product" column="product_id" />
-            <element type="integer" column="qty" />
-        </map>
-    </class>
-    <query name="getAllSales">
-        <![CDATA[from Sale]]>
+  <class name="com.poojan.model.Sale" table="sale">
+    <id name="id" type="integer">
+      <column name="id"/>
+      <generator class="increment"/>
+    </id>
+    <property column="sale_date" name="saleDate" type="date"/>
+    <property column="name" name="name" not-null="true" type="string"/>
+    <map cascade="save-update" name="products" table="saleItems">
+      <key column="sale_id"/>
+      <map-key-many-to-many class="com.poojan.model.Product" column="product_id"/>
+      <element column="qty" type="integer"/>
+    </map>
+  </class>
+  <query name="getAllSales">
+        from Sale
     </query>
-
-    <query name="getSaleBySale">
-        <![CDATA[from Sale s where s.id = :id]]>
+  <query name="getSaleBySale">
+        from Sale s where s.id = :id
     </query>
 </hibernate-mapping>

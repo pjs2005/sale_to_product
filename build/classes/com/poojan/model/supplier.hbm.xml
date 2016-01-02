@@ -14,8 +14,9 @@
             <key column="supplier"/>
             <list-index column="listindex"/>
             <many-to-many column="product" class="com.poojan.model.Product"/>
-        </list>
+        </list>  
     </class>
+    
     <query name="getAllSupplier">
         <![CDATA[from Supplier]]>
     </query>
@@ -25,4 +26,5 @@
     <query name="getSupllier">
         <![CDATA[from Supplier s where s.id = :id]]>
     </query>
+    
 </hibernate-mapping>

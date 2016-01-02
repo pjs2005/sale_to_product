@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.poojan.GUI;
 
 import com.poojan.model.DBManager;
@@ -23,7 +18,7 @@ import org.hibernate.HibernateException;
 public class NewSaleGUI extends javax.swing.JFrame {
 
     public Sale sale;
-    DBManager salesdb = new DBManager();
+    DBManager dBManager = new DBManager();
 
     /**
      * Creates new form NewSaleGUI
@@ -45,21 +40,21 @@ public class NewSaleGUI extends javax.swing.JFrame {
     public NewSaleGUI(Sale insale) {
         initComponents();
         // getting hibernate persisted version.
-        this.sale = salesdb.getSaleBySale(insale.getId());
-        
+        this.sale = dBManager.getSaleBySale(insale.getId());
+
         saveButton.setVisible(false);
         titleLabel.setVisible(false);
-        setUpTable();
+
         customerTextField.setText(sale.getName());
-        
-        outputTotal();
 
         populateProductList();
+
+        setUpTable();
 
     }
 
     private void populateProductList() {
-        List<Product> list = salesdb.getAllProducts();
+        List<Product> list = dBManager.getAllProducts();
 
         for (Product product : list) {
             productSelectionComboBox.addItem(product.getName());
@@ -67,11 +62,14 @@ public class NewSaleGUI extends javax.swing.JFrame {
     }
 
     private void outputTotal() {
-        totalLabelIn.setVisible(true);
-        totalLabel.setVisible(true);
+
         float sum = sale.getTotalAmount();
+        
         DecimalFormat df = new DecimalFormat("#.##");
         String out = df.format(sum);
+        
+        totalLabelIn.setVisible(true);
+        totalLabel.setVisible(true);
         totalLabel.setText(out);
     }
 
@@ -84,20 +82,22 @@ public class NewSaleGUI extends javax.swing.JFrame {
         tableHeaders.add("Qty");
         tableHeaders.add("Sub Total");
 
-        for (Map.Entry<Product, Integer> entry : sale.getMapProducts().entrySet()) {
-            Product enterykey = entry.getKey();
-            int val = entry.getValue();
+        for (Map.Entry<Product, Integer> entry : sale.getProducts().entrySet()) {
+            Product product = entry.getKey();
+            int qty = entry.getValue();
 
             Vector<Object> oneRow = new Vector<Object>();
 
-            oneRow.add(enterykey.getName());
-            oneRow.add(val);
-            oneRow.add(enterykey.getPrice() * val);
+            oneRow.add(product.getName());
+            oneRow.add(qty);
+//            oneRow.add(product.getPrice() * qty);
+            oneRow.add(sale.getProductSub(product));
             tableData.add(oneRow);
 
         }
 
         productsTable.setModel(new DefaultTableModel(tableData, tableHeaders));
+        outputTotal();
     }
 
     /**
@@ -265,7 +265,6 @@ public class NewSaleGUI extends javax.swing.JFrame {
 
         sale.addProduct(selectedProduct);
 
-        outputTotal();
         setUpTable();
 
     }//GEN-LAST:event_addProductButtonActionPerformed
@@ -273,7 +272,7 @@ public class NewSaleGUI extends javax.swing.JFrame {
     private Product getProductFromComboBox() {
         String name = productSelectionComboBox.getSelectedItem().toString();
         Product selectedProduct;
-        selectedProduct = salesdb.getProductbyName(name);
+        selectedProduct = dBManager.getProductbyName(name);
         return selectedProduct;
     }
 
@@ -283,7 +282,7 @@ public class NewSaleGUI extends javax.swing.JFrame {
             return;
         }
         try {
-            salesdb.save(sale);
+            dBManager.save(sale);
         } catch (HibernateException exc) {
             JOptionPane.showMessageDialog(rootPane, exc.getCause().getMessage());
             System.out.println(exc);
@@ -317,9 +316,9 @@ public class NewSaleGUI extends javax.swing.JFrame {
         if (setName()) {
             return;
         }
-        
+
         try {
-            salesdb.update(sale);
+            dBManager.update(sale);
         } catch (HibernateException exc) {
             JOptionPane.showMessageDialog(rootPane, exc.getCause().getMessage());
             System.out.println(exc);
@@ -334,7 +333,6 @@ public class NewSaleGUI extends javax.swing.JFrame {
 
         sale.removeProduct(selectedProduct);
 
-        outputTotal();
         setUpTable();
     }//GEN-LAST:event_removeProductButtonActionPerformed
 

@@ -9,14 +9,10 @@
         <property name="name" unique="true" unique-key="name" not-null="true" type="string" column="name"/>
         <property name="price" type="float" column="price"/>
         <many-to-one name="supplier" not-null="true" column="supplier" cascade="save-update" class="com.poojan.model.Supplier" />
-        <list name="sales" cascade="save-update">
-            <key column="sale_id"/>
-            <list-index column="position"/>
-            <many-to-many class="com.poojan.model.Sale" />
-<!--            creates another table(no real value)-->
-        </list>
+        
         
     </class>
+    
     <query name="getAllProducts">
         <![CDATA[from Product]]>
     </query>
@@ -29,4 +25,5 @@
     <query name="getProduct">
         <![CDATA[from Product p where p.id = :id]]>
     </query>
+    
 </hibernate-mapping>

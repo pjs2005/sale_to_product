@@ -1,12 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.poojan.model;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -17,21 +9,23 @@ public class Product {
     private int id;
     private String name;
     private float price;
-    private List<Sale> sales = new ArrayList<Sale>();
     private Supplier supplier;
 
     public Product(String name) {
         this();
         this.name = name;
-
     }
 
     public Product() {
-        this.price = 100f;
+
     }
 
     public void addSupplier(Supplier supplier) {
-        supplier.getItems().add(this);
+        if (this.supplier != null) {
+            this.supplier.removeProduct(this);
+        }
+
+        supplier.addProduct(this);
         this.supplier = supplier;
 
     }
@@ -46,10 +40,6 @@ public class Product {
 
     public float getPrice() {
         return price;
-    }
-
-    public List<Sale> getSales() {
-        return sales;
     }
 
     public Supplier getSupplier() {
@@ -68,10 +58,7 @@ public class Product {
         this.price = price;
     }
 
-    public void setSales(List<Sale> sales) {
-        this.sales = sales;
-    }
-
+    @Deprecated
     public void setSupplier(Supplier supplier) {
         this.supplier = supplier;
 

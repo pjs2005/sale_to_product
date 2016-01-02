@@ -1,16 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.poojan.model;
 
-import java.math.BigDecimal;
 import java.util.List;
-import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.criterion.Restrictions;
 
 /**
  *
@@ -120,6 +112,10 @@ public class DBManager {
         session.merge(sale);
         session.getTransaction().commit();
         session.flush();
+    }
+    
+    protected void finalize(){
+        session.close();
     }
 
 }

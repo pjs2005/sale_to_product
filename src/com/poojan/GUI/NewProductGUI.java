@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.poojan.GUI;
 
-import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import com.poojan.model.DBManager;
 import com.poojan.model.Product;
 import com.poojan.model.Supplier;
@@ -38,9 +33,9 @@ public class NewProductGUI extends javax.swing.JFrame {
 
     }
 
-    public NewProductGUI(Product product) {
+    public NewProductGUI(Product inProduct) {
         initComponents();
-        this.product = product;
+        this.product = dBManager.getProduct(inProduct.getId());
 
         nameTextField.setText(product.getName());
         priceTextField.setText(Float.toString(product.getPrice()));
@@ -71,16 +66,11 @@ public class NewProductGUI extends javax.swing.JFrame {
         Float f = Float.valueOf(a);
         product.setPrice(f);
 
-        if (supplierCombo.getSelectedItem().toString().equals("")) {
-            out = true;
-        } else {
-            supplier = dBManager.getSupllierbyName(supplierCombo.getSelectedItem().toString());
-//            product.setSupplier(found);
+        supplier = dBManager.getSupllierbyName(supplierCombo.getSelectedItem().toString());
 
-            supplier = dBManager.getSupllier(supplier.getId());
-            supplier.addProduct(product);
-            dBManager.update(supplier);
-        }
+        supplier = dBManager.getSupllier(supplier.getId());
+        product.addSupplier(supplier);
+
         //product.setSupplier(dBManager.getSupllierbyName(supplierCombo.getSelectedItem().toString()));
         return out;
     }

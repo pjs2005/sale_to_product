@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.poojan.GUI;
 
 import com.poojan.model.DBManager;
@@ -17,7 +12,7 @@ import org.hibernate.HibernateException;
 public class NewSupplierGUI extends javax.swing.JFrame {
 
     Supplier supplier;
-    DBManager dmaBManager = new DBManager();
+    DBManager dBManager = new DBManager();
 
     /**
      * Creates new form NewSupplierGUI
@@ -33,8 +28,8 @@ public class NewSupplierGUI extends javax.swing.JFrame {
 
     public NewSupplierGUI(Supplier supplier) {
         initComponents();
-        this.supplier = dmaBManager.getSupllier(supplier.getId());
-        title.setVisible(false);
+        this.supplier = dBManager.getSupllier(supplier.getId());
+        title.setText(supplier.getName());
         saveButton.setVisible(false);
         updateButton.setVisible(true);
 
@@ -64,7 +59,6 @@ public class NewSupplierGUI extends javax.swing.JFrame {
         saveButton = new javax.swing.JButton();
         adddressPane = new javax.swing.JScrollPane();
         addressBox = new javax.swing.JTextArea();
-        titleLabel = new javax.swing.JLabel();
         title = new javax.swing.JLabel();
         viewProductsButton = new javax.swing.JButton();
         updateButton = new javax.swing.JButton();
@@ -84,7 +78,6 @@ public class NewSupplierGUI extends javax.swing.JFrame {
         phoneTextField.setMinimumSize(new java.awt.Dimension(0, 0));
 
         emailTextField.setColumns(12);
-        emailTextField.setText("         "); // NOI18N
         emailTextField.setMinimumSize(new java.awt.Dimension(0, 0));
 
         closeButton.setText("Close");
@@ -105,9 +98,6 @@ public class NewSupplierGUI extends javax.swing.JFrame {
         addressBox.setRows(5);
         addressBox.setToolTipText("");
         adddressPane.setViewportView(addressBox);
-
-        titleLabel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        titleLabel.setText("New Sale");
 
         title.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
 
@@ -160,11 +150,6 @@ public class NewSupplierGUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(title)
                 .addGap(128, 128, 128))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(159, 159, 159)
-                    .addComponent(titleLabel)
-                    .addContainerGap(202, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,11 +179,6 @@ public class NewSupplierGUI extends javax.swing.JFrame {
                     .addComponent(viewProductsButton)
                     .addComponent(updateButton))
                 .addContainerGap())
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(143, 143, 143)
-                    .addComponent(titleLabel)
-                    .addContainerGap(144, Short.MAX_VALUE)))
         );
 
         pack();
@@ -213,7 +193,7 @@ public class NewSupplierGUI extends javax.swing.JFrame {
 
         setToSupplier();
         try {
-            dmaBManager.save(supplier);
+            dBManager.save(supplier);
         } catch (HibernateException exc) {
             JOptionPane.showMessageDialog(rootPane, exc.getCause().getMessage());
             System.out.println(exc);
@@ -233,7 +213,7 @@ public class NewSupplierGUI extends javax.swing.JFrame {
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
         setToSupplier();
         try {
-            dmaBManager.update(supplier);
+            dBManager.update(supplier);
         } catch (HibernateException exc) {
             JOptionPane.showMessageDialog(rootPane, exc.getCause().getMessage());
             System.out.println(exc);
@@ -261,7 +241,6 @@ public class NewSupplierGUI extends javax.swing.JFrame {
     private javax.swing.JTextField phoneTextField;
     private javax.swing.JButton saveButton;
     private javax.swing.JLabel title;
-    private javax.swing.JLabel titleLabel;
     private javax.swing.JButton updateButton;
     private javax.swing.JButton viewProductsButton;
     // End of variables declaration//GEN-END:variables

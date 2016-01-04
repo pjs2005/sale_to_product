@@ -17,7 +17,6 @@ public class Product {
     }
 
     public Product() {
-
     }
 
     public void addSupplier(Supplier supplier) {

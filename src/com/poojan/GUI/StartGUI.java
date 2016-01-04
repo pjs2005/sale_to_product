@@ -31,8 +31,11 @@ public class StartGUI extends javax.swing.JFrame {
         suppliersButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(500, 400));
 
         newSaleButton.setText("New Sale");
+        newSaleButton.setMaximumSize(new java.awt.Dimension(130, 30));
+        newSaleButton.setMinimumSize(new java.awt.Dimension(130, 30));
         newSaleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 newSaleButtonActionPerformed(evt);
@@ -41,6 +44,8 @@ public class StartGUI extends javax.swing.JFrame {
 
         newProductButton.setText("New Product");
         newProductButton.setToolTipText("");
+        newProductButton.setMaximumSize(new java.awt.Dimension(130, 30));
+        newProductButton.setMinimumSize(new java.awt.Dimension(130, 30));
         newProductButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 newProductButtonActionPerformed(evt);
@@ -48,6 +53,8 @@ public class StartGUI extends javax.swing.JFrame {
         });
 
         newsupplierButton.setText("New Supplier");
+        newsupplierButton.setMaximumSize(new java.awt.Dimension(130, 30));
+        newsupplierButton.setMinimumSize(new java.awt.Dimension(130, 30));
         newsupplierButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 newsupplierButtonActionPerformed(evt);
@@ -55,6 +62,8 @@ public class StartGUI extends javax.swing.JFrame {
         });
 
         exitButton.setText("Exit");
+        exitButton.setMaximumSize(new java.awt.Dimension(130, 30));
+        exitButton.setMinimumSize(new java.awt.Dimension(130, 30));
         exitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitButtonActionPerformed(evt);
@@ -62,6 +71,8 @@ public class StartGUI extends javax.swing.JFrame {
         });
 
         productsButton.setText("View Products");
+        productsButton.setMaximumSize(new java.awt.Dimension(130, 30));
+        productsButton.setMinimumSize(new java.awt.Dimension(130, 30));
         productsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 productsButtonActionPerformed(evt);
@@ -69,6 +80,8 @@ public class StartGUI extends javax.swing.JFrame {
         });
 
         salesButton.setText("View Sales");
+        salesButton.setMaximumSize(new java.awt.Dimension(130, 30));
+        salesButton.setMinimumSize(new java.awt.Dimension(130, 30));
         salesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 salesButtonActionPerformed(evt);
@@ -76,6 +89,8 @@ public class StartGUI extends javax.swing.JFrame {
         });
 
         suppliersButton.setText("View Suppliers");
+        suppliersButton.setMaximumSize(new java.awt.Dimension(130, 30));
+        suppliersButton.setMinimumSize(new java.awt.Dimension(130, 30));
         suppliersButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 suppliersButtonActionPerformed(evt);
@@ -89,8 +104,8 @@ public class StartGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(newSaleButton)
-                    .addComponent(salesButton, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(newSaleButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(salesButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(productsButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -98,8 +113,8 @@ public class StartGUI extends javax.swing.JFrame {
                     .addComponent(exitButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(newsupplierButton)
-                    .addComponent(suppliersButton))
+                    .addComponent(newsupplierButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(suppliersButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -110,16 +125,16 @@ public class StartGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(newSaleButton)
-                    .addComponent(newProductButton)
-                    .addComponent(newsupplierButton))
+                    .addComponent(newSaleButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(newProductButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(newsupplierButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(productsButton)
-                    .addComponent(salesButton)
-                    .addComponent(suppliersButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 180, Short.MAX_VALUE)
-                .addComponent(exitButton)
+                    .addComponent(productsButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(salesButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(suppliersButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 

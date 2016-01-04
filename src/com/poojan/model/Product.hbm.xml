@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="com.poojan.model.Product" table="product">
         <id name="id" type="integer">
@@ -9,10 +9,8 @@
         <property name="name" unique="true" unique-key="name" not-null="true" type="string" column="name"/>
         <property name="price" type="float" column="price"/>
         <many-to-one name="supplier" not-null="true" column="supplier" cascade="save-update" class="com.poojan.model.Supplier" />
-        
-        
     </class>
-    
+
     <query name="getAllProducts">
         <![CDATA[from Product]]>
     </query>
@@ -25,5 +23,5 @@
     <query name="getProduct">
         <![CDATA[from Product p where p.id = :id]]>
     </query>
-    
+
 </hibernate-mapping>

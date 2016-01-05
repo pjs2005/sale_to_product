@@ -15,7 +15,7 @@
         </map>
     </class>
     <query name="getAllSales">
-        <![CDATA[from Sale]]>
+        <![CDATA[from Sale order by id]]>
     </query>
     <query name="getSaleBySale">
          <![CDATA[from Sale s where s.id = :id]]>

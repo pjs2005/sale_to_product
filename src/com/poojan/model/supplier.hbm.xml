@@ -18,7 +18,7 @@
     </class>
     
     <query name="getAllSupplier">
-        <![CDATA[from Supplier]]>
+        <![CDATA[from Supplier order by name]]>
     </query>
     <query name="getSupllierbyName">
         <![CDATA[from Supplier s where s.name = :name]]>

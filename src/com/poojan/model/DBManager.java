@@ -104,14 +104,12 @@ public class DBManager {
         session.beginTransaction();
         session.merge(supplier);
         session.getTransaction().commit();
-        session.flush();
     }
 
     public void update(Sale sale) {
         session.beginTransaction();
         session.merge(sale);
         session.getTransaction().commit();
-        session.flush();
     }
     
     protected void finalize(){

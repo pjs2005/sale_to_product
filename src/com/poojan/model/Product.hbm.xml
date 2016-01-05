@@ -12,7 +12,7 @@
     </class>
 
     <query name="getAllProducts">
-        <![CDATA[from Product]]>
+        <![CDATA[from Product order by name]]>
     </query>
     <query name="getAllProductsSupplier">
         <![CDATA[from Product p where supplier = :supplier]]>

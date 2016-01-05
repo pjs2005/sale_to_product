@@ -22,7 +22,7 @@ public class ViewSalesGUI extends javax.swing.JFrame {
     }
 
     private void setUpTable() {
-        dBManager = new DBManager();
+        
         Vector<String> tableHeaders = new Vector<String>();
         Vector tableData = new Vector();
         tableHeaders.add("Sale ID");

@@ -7,8 +7,7 @@
     <property name="hibernate.connection.url">jdbc:mysql://localhost/sale_to_product?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">appuser</property>
     <property name="hibernate.connection.password">appuser</property>
-    <property name="hibernate.hbm2ddl.auto">update</property>
-    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.hbm2ddl.auto">validate</property>
     <property name="hibernate.query.factory_class">org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory</property>
     <mapping resource="com/poojan/model/Product.hbm.xml"/>
     <mapping resource="com/poojan/model/sale.hbm.xml"/>

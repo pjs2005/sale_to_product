@@ -22,7 +22,7 @@ public class ViewSuppliersGUI extends javax.swing.JFrame {
     }
 
     private void setUpTable() {
-        
+        dBManager = new DBManager();
         Vector<String> tableHeaders = new Vector<String>();
         Vector tableData = new Vector();
         tableHeaders.add("ID");
@@ -137,11 +137,11 @@ public class ViewSuppliersGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_supplersTableFocusLost
 
     private void formFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusGained
-        
+
     }//GEN-LAST:event_formFocusGained
 
     private void formFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusLost
-        
+
     }//GEN-LAST:event_formFocusLost
 
 

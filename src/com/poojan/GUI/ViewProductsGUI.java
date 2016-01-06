@@ -31,14 +31,13 @@ public class ViewProductsGUI extends javax.swing.JFrame {
     }
 
     private void setUpTable() {
-
+        dBManager = new DBManager();
         Vector<String> tableHeaders = new Vector<String>();
         Vector tableData = new Vector();
         tableHeaders.add("ID");
         tableHeaders.add("Name");
         tableHeaders.add("Price");
         tableHeaders.add("Supplier");
-
         List<Product> list;
         
         if (supplier != null) {

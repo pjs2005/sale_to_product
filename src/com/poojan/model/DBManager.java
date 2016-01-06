@@ -27,7 +27,7 @@ public class DBManager {
 
     public List<Sale> getAllSales() {
         session.beginTransaction();
-        List<Sale>  out = session.getNamedQuery("getAllSales").list();
+        List<Sale> out = session.getNamedQuery("getAllSales").list();
         session.getTransaction().commit();
         return out;
     }
@@ -37,7 +37,7 @@ public class DBManager {
     }
 
     public Product getProduct(int id) {
-        Query query = session.getNamedQuery("getProduct").setString("id", String.valueOf(id));
+        Query query = session.getNamedQuery("getProduct").setInteger("id", id);
         List<Product> ProductList = query.list();
         Product product = (Product) ProductList.get(0);
         return product;
@@ -50,10 +50,8 @@ public class DBManager {
         return product;
     }
 
-    
-
     public Sale getSaleBySale(int id) {
-        Query query = session.getNamedQuery("getSaleBySale").setString("id", String.valueOf(id));
+        Query query = session.getNamedQuery("getSaleBySale").setInteger("id", id);
         List<Sale> saleList = query.list();
         Sale sale = (Sale) saleList.get(0);
         return sale;
@@ -68,7 +66,7 @@ public class DBManager {
     }
 
     public Supplier getSupllier(int id) {
-        Query query = session.getNamedQuery("getSupllier").setString("id", String.valueOf(id));
+        Query query = session.getNamedQuery("getSupllier").setInteger("id", id);
         List<Supplier> saleList = query.list();
         Supplier supplier = (Supplier) saleList.get(0);
         return supplier;
@@ -78,14 +76,12 @@ public class DBManager {
         session.beginTransaction();
         session.save(sale);
         session.getTransaction().commit();
-        session.flush();
     }
 
     public void save(Supplier supplier) {
         session.beginTransaction();
         session.save(supplier);
         session.getTransaction().commit();
-        session.flush();
     }
 
     public void save(Product product) {
@@ -111,8 +107,8 @@ public class DBManager {
         session.merge(sale);
         session.getTransaction().commit();
     }
-    
-    protected void finalize(){
+
+    protected void finalize() {
         session.close();
     }
 

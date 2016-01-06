@@ -58,21 +58,20 @@ public class NewProductGUI extends javax.swing.JFrame {
         supplierCombo.setSelectedItem(null);
     }
 
-    private Boolean setValues() {
-        Boolean out = false;
+    private void setValues() throws NumberFormatException{
+       
         product.setName(nameTextField.getText());
 
         String a = priceTextField.getText();
         Float f = Float.valueOf(a);
         product.setPrice(f);
-
+     
         supplier = dBManager.getSupllierbyName(supplierCombo.getSelectedItem().toString());
 
         supplier = dBManager.getSupllier(supplier.getId());
         product.addSupplier(supplier);
 
         //product.setSupplier(dBManager.getSupllierbyName(supplierCombo.getSelectedItem().toString()));
-        return out;
     }
 
     /**
@@ -198,15 +197,17 @@ public class NewProductGUI extends javax.swing.JFrame {
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
 
-        if (setValues()) {
-            return;
-        }
         try {
+            setValues();
             dBManager.save(product);
             dBManager.update(supplier);
         } catch (HibernateException exc) {
             JOptionPane.showMessageDialog(rootPane, exc.getCause().getMessage());
-            System.out.println(exc.getCause());
+            System.out.println(exc);
+            return;
+        }
+        catch (NumberFormatException exc){
+            JOptionPane.showMessageDialog(rootPane, "Invalid Price Entered");
             return;
         }
         setVisible(false);
@@ -220,15 +221,17 @@ public class NewProductGUI extends javax.swing.JFrame {
 
     private void UpdatebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdatebuttonActionPerformed
 
-        if (setValues()) {
-            return;
-        }
         try {
+            setValues();
             dBManager.update(product);
             dBManager.update(supplier);
         } catch (HibernateException exc) {
             JOptionPane.showMessageDialog(rootPane, exc.getCause().getMessage());
             System.out.println(exc);
+            return;
+        }
+        catch (NumberFormatException exc){
+            JOptionPane.showMessageDialog(rootPane, "Invalid Price Entered");
             return;
         }
         setVisible(false);
